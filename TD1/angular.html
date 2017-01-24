@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js">
+
+    </script>
+</head>
+<body>
+<fieldset data-ng-app="myApp" data-ng-controller="CarreController as ctrl">
+    <legend>Carré</legend>
+    <input type="text" data-ng-model="ctrl.value">
+    <div>Carré : {{ctrl.carre(ctrl.value)}}</div>
+</fieldset>
+<script  src="angular.js"></script>
+</body>
+</html>

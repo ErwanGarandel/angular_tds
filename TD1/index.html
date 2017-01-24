@@ -20,7 +20,7 @@
 </div>
 
 <!-- Exemple 1 -->
-<div ng-app="" ng-init="prenom='Maurice'">
+<div  ng-init="prenom='Maurice'">
     <p>Prénom : <input type="text" ng-model="prenom"></p>
     <p>Vous avez saisi : {{ prenom }}</p>
 </div>
@@ -39,5 +39,15 @@
         <label><input type="radio" ng-value="client.id" name="client">{{ client.nom + ', ' + client.pays }}</label>
     </div>
 </div>
+
+<!-- Expressions : Exemple -->
+<p>Vous avez saisi : {{ prenom | uppercase}}</p>
+<span>
+    1+2 = {{1+2}}
+</span>
+
+<!-- Filtres -->
+
+
 </body>
 </html>

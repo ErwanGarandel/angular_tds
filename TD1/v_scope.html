@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>scope</title><style>
+    .ng-scope {
+        border-style: dotted solid;
+        border-width: thin;
+        border-color: red;
+        margin: 1em;
+        padding: 1em;
+    }
+
+    label {
+        color: red;
+    }
+</style>
+    <script
+            src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+
+<div data-ng-app="ScopeModule">
+    <label for="root">Scope racine</label> <input type="text" id="root"
+                                                  placeholder="Entrez du texte" ng-model="message">
+    <div data-ng-controller="ScopeController">
+        <label for="ctrl">Scope enfant</label> <input type="text" id="ctrl"
+                                                      placeholder="Entrez du texte" ng-model="message">
+    </div>
+</div>
+</body>
+</html>
