@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="HelloApp">
+<head>
+    <meta charset="UTF-8">
+    <title>TitleHello</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+</head>
+<body>
+<body>
+<div ng-controller="HelloController as hello">
+    <br> Message : {{hello.message}}
+</div>
+
+<script>
+    angular.module("HelloApp",[]).controller("HelloController",function(){this.message="Hello world";});
+</script>
+</body>
+</html>
