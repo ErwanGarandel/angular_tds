@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+
+h3{
+    font-weight: normal;
+    background-color: blue;
+}
+
+textarea{
+    outline-color : blue;
+    height: 100%;
+    font-weight: 600;
+    resize : none;
+    overflow: auto;
+}
