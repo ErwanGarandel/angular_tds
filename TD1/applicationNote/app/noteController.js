@@ -1,14 +1,17 @@
 /**
  * Created by Erwan on 27/01/2017.
  */
-var myApp = angular.module('myApp',[]);
+var myApp = angular.module('myApp',['ngCookies']);
 
-    myApp.controller('ControllerPrincipalMyApp', [function(){
-    this.messageNote="";
+    myApp.controller('ControllerPrincipalMyApp',['$cookies', function($cookies){
+    this.messageNote==$cookies.get('message');
     this.info = "";
     this.status="";
     this.save = function(){
-        this.info="Note sauvegardée";
+        if (this.messageNote == ''){
+            this.info = "Note sauvegardée";
+            $cookies.put('message', this.messageNote);
+        }
     };
     this.reset = function(){
         this.messageNote="";
@@ -21,7 +24,7 @@ var myApp = angular.module('myApp',[]);
         else if(nb<20)
             this.status="alert-danger";
         else
-            this.status="alert-info"
+            this.status="alert-info";
 
         return nb;
 
