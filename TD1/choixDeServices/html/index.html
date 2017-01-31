@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Choix de service</title>
+    <script rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="../app/ServicesController.js"></script>
+</head>
+<body data-ng-controller="serviceController as service">
+
+<h2>Choix de Services</h2>
+
+<h3>Services</h3>
+
+<div class="alert alert-info">
+    <span>Choisissez les éléments à inclure</span>
+   <b>{{service.totValue}} </b>  élément(s) sélectionné(s)
+
+<div class="service-item" ng-repeat="ser in service.services" ng-class="ser['active']? 'on' : 'off' " data-ng-click="ser['active']=!ser['active'] ; service.total();">
+    <div id="timer" class="service-name" >{{ser["name"]}}<span class="service-nom">&nbsp;&nbsp;&nbsp;&nbsp;{{ser["price"] | currency}}</span></div>
+</div>
+
+    <div class="service-total">TOTAL :
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    <b>{{service.totPrice  | currency}}</b>
+    </div>
+</div>
+</body>
+</html>
