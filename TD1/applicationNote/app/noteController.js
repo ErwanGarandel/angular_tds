@@ -4,11 +4,11 @@
 var myApp = angular.module('myApp',['ngCookies']);
 
     myApp.controller('ControllerPrincipalMyApp',['$cookies', function($cookies){
-    this.messageNote==$cookies.get('message');
+    this.messageNote=$cookies.get('message');
     this.info = "";
     this.status="";
     this.save = function(){
-        if (this.messageNote == ''){
+        if (this.messageNote != ''){
             this.info = "Note sauvegardée";
             $cookies.put('message', this.messageNote);
         }
