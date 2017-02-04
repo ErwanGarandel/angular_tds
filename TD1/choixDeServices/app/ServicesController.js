@@ -4,8 +4,7 @@
 var app = angular.module('myApp',[]);
 
 app.controller('serviceController', ["$scope","$filtre", "$http", function($scope, $filtre, $http) {
-    $scope.totValue = 1;
-    $scope.totPrice = 300;
+
     $scope.services =  [
         {
             "name": "Web Development",
@@ -45,7 +44,7 @@ app.controller('serviceController', ["$scope","$filtre", "$http", function($scop
     };
 
     //Réduction
-    $scope.reductionValidee = false;
+    $scope.reductionValide = false;
     $scope.codeEntré = false;
 
 
@@ -64,7 +63,7 @@ app.controller('serviceController', ["$scope","$filtre", "$http", function($scop
     };
 
     $scope.montrerCalculerReduction = function(){
-        $scope.reductionValidee = !$scope.reductionValidee;
+        $scope.reductionValide = !$scope.reductionValide;
         $scope.calculerReduction();
     }
 }]);

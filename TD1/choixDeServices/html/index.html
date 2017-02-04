@@ -6,7 +6,6 @@
     <link rel="stylesheet" type="text/css" href="../css/sheet.css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
-    <script src="http://clement.barnab2.tk/js/angular/i18n/angular-locale_fr-fr.js"></script>
 </head>
 <body data-ng-controller="serviceController as service">
 
@@ -35,13 +34,13 @@
         <input type="text" id="code-reduc" ng-model="codeEntré" ng-keyup="calculerReduction()" placeholder="Code promo" />
     </div>
 
-<div class="service-item service-total-price service-reduc" ng-class="reducValide ? 'show' : 'hide'">
+<div class="service-item service-total-price service-reduc" ng-class="reductionValide ? 'show' : 'hide'">
     <div class="service-item-name">Remise : </div>
-    <div class="service-item-price">{{service.remise}}</div>
+    <div class="service-item-price">{{remise}}</div>
 </div>
-<div class="service-item service-reduc" ng-class="reducValide ? 'show' : 'hide'">
+<div class="service-item service-reduc" ng-class="reductionValide ? 'show' : 'hide'">
     <div class="service-item-name">Total : </div>
-    <div class="service-item-price">{{service.prixFinal}}</div>
+    <div class="service-item-price">{{prixFinal}}</div>
 </div>
 </div>
 <script src="../app/ServicesController.js"></script>
