@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <title>Choix de service</title>
-    <script rel="stylesheet" type="text/css" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="../app/ServicesController.js"></script>
+    <script rel="stylesheet" type="text/css" ></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
 </head>
 <body data-ng-controller="serviceController as service">
 
@@ -13,18 +13,24 @@
 
 <h3>Services</h3>
 
-<div class="alert alert-info">
+<div class="service-info">
     <span>Choisissez les éléments à inclure</span>
    <b>{{service.totValue}} </b>  élément(s) sélectionné(s)
 
-<div class="service-item" ng-repeat="ser in service.services" ng-class="ser['active']? 'on' : 'off' " data-ng-click="ser['active']=!ser['active'] ; service.total();">
-    <div id="timer" class="service-name" >{{ser["name"]}}<span class="service-nom">&nbsp;&nbsp;&nbsp;&nbsp;{{ser["price"] | currency}}</span></div>
+<div class="service-item"
+     ng-repeat="ser in service.services"
+     ng-class="ser['active']? 'on' : 'off'"
+     data-ng-click="ser['active']=!ser['active']; service.total()"
+>
+    <div class="service-item-name" >{{ser["name"]}}</div>
+    <div class="service-item-price">&nbsp;&nbsp;&nbsp;&nbsp;{{ser["price"] | currency}}</div>
 </div>
 
-    <div class="service-total">TOTAL :
-    &nbsp;&nbsp;&nbsp;&nbsp;
-    <b>{{service.totPrice  | currency}}</b>
+    <div class="service-item service-total-price">
+        <d   iv class="service-item-name">TOTAL :</div>
+        <div class="service-item-price">{{service.totPrice | currency}}</div>
     </div>
 </div>
+<script src="../app/ServicesController.js"></script>
 </body>
 </html>
