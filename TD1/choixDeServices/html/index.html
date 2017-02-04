@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Choix de service</title>
-    <script rel="stylesheet" type="text/css" ></script>
+    <link rel="stylesheet" type="text/css" href="../css/sheet.css"/>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+    <script src="http://clement.barnab2.tk/js/angular/i18n/angular-locale_fr-fr.js"></script>
 </head>
 <body data-ng-controller="serviceController as service">
 
 <h2>Choix de Services</h2>
-
-<h3>Services</h3>
 
 <div class="service-info">
     <span>Choisissez les éléments à inclure</span>
@@ -23,13 +22,27 @@
      data-ng-click="ser['active']=!ser['active']; service.total()"
 >
     <div class="service-item-name" >{{ser["name"]}}</div>
-    <div class="service-item-price">&nbsp;&nbsp;&nbsp;&nbsp;{{ser["price"] | currency}}</div>
+    <div class="service-item-price">{{ser["price"] | currency}}</div>
 </div>
 
     <div class="service-item service-total-price">
-        <d   iv class="service-item-name">TOTAL :</div>
+        <div class="service-item-name">TOTAL :</div>
         <div class="service-item-price">{{service.totPrice | currency}}</div>
     </div>
+
+    <div class="service-item">
+        <input type="checkbox" name="reduc" ng-click="montrerCalculerReduction() "/>
+        <input type="text" id="code-reduc" ng-model="codeEntré" ng-keyup="calculerReduction()" placeholder="Code promo" />
+    </div>
+
+<div class="service-item service-total-price service-reduc" ng-class="reducValide ? 'show' : 'hide'">
+    <div class="service-item-name">Remise : </div>
+    <div class="service-item-price">{{service.remise}}</div>
+</div>
+<div class="service-item service-reduc" ng-class="reducValide ? 'show' : 'hide'">
+    <div class="service-item-name">Total : </div>
+    <div class="service-item-price">{{service.prixFinal}}</div>
+</div>
 </div>
 <script src="../app/ServicesController.js"></script>
 </body>

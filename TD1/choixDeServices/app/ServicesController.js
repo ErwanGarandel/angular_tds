@@ -3,10 +3,10 @@
  */
 var app = angular.module('myApp',[]);
 
-app.controller('serviceController', ["$filtre", function($filtre) {
-    this.totValue = 1;
-    this.totPrice = 300;
-    this.services =  [
+app.controller('serviceController', ["$scope","$filtre", "$http", function($scope, $filtre, $http) {
+    $scope.totValue = 1;
+    $scope.totPrice = 300;
+    $scope.services =  [
         {
             "name": "Web Development",
             "price": 300,
@@ -26,22 +26,46 @@ app.controller('serviceController', ["$filtre", function($filtre) {
     }
     ];
 
-    this.total = function(){
+    $scope.total = function(){
         var p = 0;
         var i = 0;
-        for(var j=0; j<this.services.length;j++){
-            if (this.services[j]["active"] == true) {
+        for(var j=0; j<$scope.services.length;j++){
+            if ($scope.services[j]["active"] == true) {
                 i++;
-                p = p + this.services[j]["price"];
+                p = p + $scope.services[j]["price"];
             }
         }
-        this.totValue = i;
-        this.totPrice = p;
-        this.prixFinal = $filtre('currency')(this.totPrice);
+        $scope.totValue = i;
+        $scope.totPrice = p;
+        $scope.prixFinal = $filtre('currency')($scope.totPrice);
     };
 
-    this.toggleActive = function(){
+    $scope.toggleActive = function(){
 
+    };
+
+    //Réduction
+    $scope.reductionValidee = false;
+    $scope.codeEntré = false;
+
+
+    $http.get('../json/promo.json').success(function(data){
+        $scope.codes= data;
+    });
+
+    $scope.calculerReduction = function(){
+        $scope.remise = "Code promo Invalide";
+        $scope.prixFinal = $filtre('currency')($scope.totPrice);
+        if($scope.codes[$scope.codeEntré]){
+            $scope.remiseNB = $scope.codes[$scope.codeSaisi]*$scope.totPrice;
+            $scope.prixFinal = $filtre('currency')($scope.totPrice - $scope.remiseNB);
+            $scope.remise = $filtre('currency')($scope.remiseNB);
+        }
+    };
+
+    $scope.montrerCalculerReduction = function(){
+        $scope.reductionValidee = !$scope.reductionValidee;
+        $scope.calculerReduction();
     }
 }]);
 

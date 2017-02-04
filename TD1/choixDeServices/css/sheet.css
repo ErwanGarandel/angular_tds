@@ -1,0 +1,57 @@
+h2{
+    text-align: center;
+    background: cadetblue;
+}
+.service-item{
+    width : 60%;
+    margin: 10px 15% ;
+    background: grey;
+    padding:10px 5%;
+    position:relative;
+    border-radius:5px;
+    cursor:pointer;
+    color: lightgreen;
+    transition: color .2s;
+}
+
+
+
+.service-item.off{
+    background: darkred;
+    color: lightcoral;
+}
+
+.service-item.on{
+    background: limegreen;
+}
+
+.service-item-price{
+    position:absolute;
+    right:10px;
+    top:25%;
+    color: cadetblue;
+}
+
+.service-info{
+    text-align: center;
+    width:100%;
+}
+
+.service-total-price{
+    background: transparent;
+    border-radius:0;
+    border-top:2px solid darkred;
+}
+
+.service-item input{
+    vertical-align:top;
+}
+
+.service-reduc{
+    background: transparent;
+    cursor: initial;
+}
+
+.hide{
+    display : none;
+}
