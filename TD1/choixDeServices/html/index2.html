@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr" data-ng-app="ServicesApp">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Client Riche- ChoixServices - TD1.5</title>
+    <link rel="stylesheet" type="text/css" href="../css/feuille.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+</head>
+<body data-ng-controller="ServicesController as serv">
+
+<div id="content">
+
+    <h2>Ex 2 : Choix de services</h2>
+
+    <div class="service-info">
+        Choisissez les éléments à inclure :<br/>
+        {{totValue}} élément(s) séléctionné(s)
+
+    </div>
+
+    <div class="service-item"
+         ng-repeat="ser in services"
+         ng-class="ser['active'] ? 'on' : 'off'"
+         ng-click="ser['active']=!ser['active'] ; total()"
+    >
+
+        <div class="service-item-name">{{ser["name"]}}</div>
+        <div class="service-item-price">{{ser["price"] | currency}}</div>
+    </div>
+
+    <div class="service-item service-total-price">
+        <div class="service-item-name">Total : </div>
+        <div class="service-item-price">{{totPrice | currency}}</div>
+    </div>
+
+    <div class="service-item">
+        <label>
+            <input type="checkbox" name="reduc" ng-click="MontrerCalculReduction()"/>
+        </label>
+        <input type="text" id="code-reduc" ng-model="codeSaisi" ng-keyup="calculReduction()" placeholder="Code promo" />
+    </div>
+
+    <div class="service-item service-total-price service-reduc" ng-class="reductionValide ? 'show' : 'hide'">
+        <div class="service-item-name">Remise : </div>
+        <div class="service-item-price">{{remise}}</div>
+    </div>
+    <div class="service-item service-reduc" ng-class="reductionValide ? 'show' : 'hide'">
+        <div class="service-item-name">Total : </div>
+        <div class="service-item-price">{{prixFinal}}</div>
+    </div>
+</div>
+
+
+<script src="../js/controller.js"></script>
+
+</body>
