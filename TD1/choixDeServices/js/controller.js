@@ -49,6 +49,7 @@ app.controller("ServicesController" , [ "$scope","$http","$filter", function($sc
     $scope.codeSaisi; //ce qui est affiché par defaut, ici rien
 
 
+    //noinspection JSUnresolvedFunction
     $http.get('../JSON/promo.json').success(function(data) {
         $scope.codes = data;
     });

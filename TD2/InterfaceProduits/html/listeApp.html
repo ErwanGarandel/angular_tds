@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="serviceApp">
+<head>
+    <meta charset="UTF-8">
+    <title>TD2 - Inter-1</title>
+    <link rel="stylesheet" type="text/css" href="../css/listeAppSheet.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
+</head>
+<body data-ng-controller="ListeController as listC">
+
+<div class="panel panel-primary">
+    <h2>Sélectionner vos produits</h2>
+    <table>
+        <tr>
+        <td>
+         <p>Produits disponibles</p>
+            <select id="listeDel" size="8" multiple="multiple" ng-dblclick="includedItems.addToInclude()" ng-model="ListC.selected" ng-options="ListC.title for ListC in listC.produits">
+            </select>
+        </td>
+            <td>
+            <input type="button" value="▶|" ng-click="listC.addToInclude()"/> <br /><br />
+            <input type="button" value="▶▶|" ng-click="listC.addAllToInclude()"/> <br /><br />
+            <input type="button" value="|◀" ng-click="listC.removeFromInclude()"/> <br /><br />
+            <input type="button" value="|◀◀" ng-click="listC.removeAllFromInclude()"/> <br /><br />
+            </td>
+            <td>
+            <p>Produits selectionnés</p>
+            <select id="listeDel2" size="8"  multiple="multiple" ng-options="items.title for items in listC.produits">
+            </select>
+            </td>
+        </tr>
+    </table>
+</div>
+<script src="../js/listeController.js"></script>
+</body>
+</html>
