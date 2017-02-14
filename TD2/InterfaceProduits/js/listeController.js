@@ -1,10 +1,10 @@
 /**
  * Created by Erwan on 07/02/2017.
  */
-var app = angular.module("serviceApp",[]);
+var app = angular.module("app",[]);
 app.controller("ListeController", function(){
     var self = this;
-    this.produits=
+    this.dispoItems=
         [
         {
             "url": "http://tutorialzine.com/2013/07/50-must-have-plugins-for-extending-twitter-bootstrap/",
@@ -42,44 +42,42 @@ app.controller("ListeController", function(){
             "image": "http://cdn.tutorialzine.com/wp-content/uploads/2013/04/service_chooser_form-100x100.jpg"
         }
     ];
-    this.items = this.dispoItems;
+    this.items=this.dispoItems;
     this.includedItems=[];
     this.selectedDispoItems=[];
     this.selectedIncludedItems=[];
-    this.step = 1;
+    this.step=1;
 
-    this.addToInclude = function () {
-        for(var j=0;self.selectedDispoItems.length;j++) {
-            self.includedItems.push(self.selectedDispoItems[j]);
+    this.addToIncluded=function(){
+        for(var i=0;i<self.selectedDispoItems.length;i++)
+            self.includedItems.push(self.selectedDispoItems[i]);
 
-        for(var i =0;i < self.selectedDispoItems.length;i++) {
-            var y = self.items.indexOf(self.selectedDispoItems[i]);
-            self.item.splice(y, 1);
-        }
-        self.selectedDispoItems=[];
-        }
-    };
-
-    this.addAllToInclude = function (){
-        for(var i =0;self.items.length;i++) {
-            self.includedItems.push(self.items[i]);
-        }
-        self.items = [];
-    };
-
-    this.removeFromInclude = function () {
-        for(var j=0;self.selectedDispoItems;j++) {
-            self.includedItems.push(self.selectedIncludedItems[j]);
-        }
-        for(var i =0;i < self.selectedDispoItems.length;i++) {
-            var y = self.items.indexOf(self.selectedDispoItems[i]);
-            self.item.splice(y, 1);
+        for(var x=0;x<self.selectedDispoItems.length;x++){
+            var y=self.items.indexOf(self.selectedDispoItems[x]);
+            self.items.splice(y,1);
         }
         self.selectedDispoItems=[];
     };
 
-    this.removeAllFromInclude = function () {
-        self.items = self.dispoItems;
-        self.includedItems = [];
+    this.addAllToIncluded=function(){
+        for(var i=0;i<self.items.length;i++)
+            self.includedItems.push(self.items[i])
+        self.items=[];
+    };
+
+    this.removeFromIncluded=function(){
+        for(var i=0;i<self.selectedIncludedItems.length;i++)
+            self.items.push(this.selectedIncludedItems[i]);
+
+        for(var x=0;x<self.selectedIncludedItems.length;x++){
+            var y=self.includedItems.indexOf(self.selectedIncludedItems[x]);
+            self.includedItems.splice(y,1);
+        }
+        self.selectedIncludedItems=[];
+    };
+
+        for(var i=0;i<self.includedItems.length;i++)
+            self.items.push(self.includedItems[i])
+        self.includedItems=[];
     };
 });

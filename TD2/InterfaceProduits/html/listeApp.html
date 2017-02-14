@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html lang="en" data-ng-app="serviceApp">
+<html lang="en" data-ng-app="app">
 <head>
     <meta charset="UTF-8">
-    <title>TD2 - Inter-1</title>
+    <title>TD2 - Listes des services</title>
     <link rel="stylesheet" type="text/css" href="../css/listeAppSheet.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.9/angular-route.min.js"></script>
 </head>
 <body data-ng-controller="ListeController as listC">
-
 <div class="panel panel-primary">
     <h2>Sélectionner vos produits</h2>
     <table>
         <tr>
-        <td>
-         <p>Produits disponibles</p>
-            <select id="listeDel" size="8" multiple="multiple" ng-dblclick="includedItems.addToInclude()" ng-model="ListC.selected" ng-options="ListC.title for ListC in listC.produits">
-            </select>
-        </td>
             <td>
-            <input type="button" value="▶|" ng-click="listC.addToInclude()"/> <br /><br />
-            <input type="button" value="▶▶|" ng-click="listC.addAllToInclude()"/> <br /><br />
-            <input type="button" value="|◀" ng-click="listC.removeFromInclude()"/> <br /><br />
-            <input type="button" value="|◀◀" ng-click="listC.removeAllFromInclude()"/> <br /><br />
+                <p>Produits disponibles</p>
+                <select title="listeDel" size="10" multiple="multiple" ng-dblclick="listC.addToIncluded()" ng-model="listC.selectedDispoItems" ng-options="item.title for item in listC.items">
+                </select>
             </td>
-            <td>
+            <td style="width:10%;margin-bottom: 1%">
+            <input type="button" value="▶| " ng-click="listC.addToIncluded()"/> <br /><br />
+            <input type="button" value="▶▶|" ng-click="listC.addAllToIncluded()"/> <br /><br />
+            <input type="button" value="|◀ " ng-click="listC.removeFromIncluded()"/> <br /><br />
+            <input type="button" value="|◀◀" ng-click="listC.removeAllFromIncluded()"/> <br /><br />
+            </td>
+            <td style="width:45%;margin-bottom: 1%">
             <p>Produits selectionnés</p>
-            <select id="listeDel2" size="8"  multiple="multiple" ng-options="items.title for items in listC.produits">
+            <select title="listeDel2" size="10"  multiple="multiple" ng-dblclick="listC.removeFromIncluded()" ng-model="listC.selectedIncludedItems" ng-options="includedItem.title for includedItem in listC.includedItems">
             </select>
             </td>
         </tr>
     </table>
+<p>
+    <ng-pluralize count="listC.includedItems.length"
+                  when="{0:'Aucun produit sélectionné', 1:'1 produit sélectionné', 'other':'{} produits sélectionnés'}">
+    </ng-pluralize>
+</p>
+    <div class="toggle ng-scope">
+        <p style="text-align: end;padding-right: 10%;"> Etape suivante -></p>
+    </div>
 </div>
 <script src="../js/listeController.js"></script>
 </body>
