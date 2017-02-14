@@ -76,6 +76,7 @@ app.controller("ListeController", function(){
         self.selectedIncludedItems=[];
     };
 
+    this.removeAllFromIncluded=function(){
         for(var i=0;i<self.includedItems.length;i++)
             self.items.push(self.includedItems[i])
         self.includedItems=[];
