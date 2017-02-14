@@ -9,6 +9,11 @@
 </head>
 <body data-ng-controller="gestionController as GestCtrl">
 
+
+
+<ng-pluralize count="GestCtrl..length"
+              when="{0:'Aucun contact trouvé', 1:'1 contact trouvé', 'other':'{} contacts trouvés'}">
+</ng-pluralize>
 <script src="../js/gestionController.js"></script>
 </body>
 </html>
