@@ -3,33 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <title>Gestion des Contacts</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
     <link rel="stylesheet" type="text/css" href="../css/GestionAppSheet.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.15/angular-filter.min.js"></script>
 </head>
 <body data-ng-controller="gestionController as GestCtrl">
 
-<h2>Contact</h2>
-<table>
-    <tr>
-        <td>
-        <div class="affichageNom" ng-repeat="identite in tableauNom">
-                {{identite.name}}
-                {{identite.surname}}
-                 {{identite.mail}}
-                <button id="update" value="modifier">Modifier</button>
-                <button id="delete" value="supprimer">Supprimer</button>
-        <br />
-        </div>
-        </td>
+<form ng-submit="updateUSer()">
+    <legend>Contact</legend>
+    <input class="filter" placeholder="Filter..." type="text" ng-model="searchText">
+<table class="table table-bordered">
+    <tr class="affichageNom" ng-repeat="identite in tabContacts | orderBy: 'name' | filter: searchText">
+            <td>{{identite.name}} </td>
+            <td>{{identite.surname}} </td>
+            <td>{{identite.mail}} </td>
+            <td> <button class="ui inverted blue icon button" id="update" ><i class="write square icon"></i></button> </td>
+            <td> <button class="ui inverted red icon button" ng-click="removeContact()" id="delete" ><i class="remove icon"></i></button> </td>
+
+        <br /><br />
     </tr>
 </table>
+<br /><br />
 
-<br />
-<br />
-<ng-pluralize count="tableauNom.length"
+<ng-pluralize class="compter"
+              count="tabContacts.length"
               when="{0:'Aucun contact trouvé', 1:'1 contact trouvé', 'other':'{} contacts trouvés'}">
 </ng-pluralize>
+
+    <button type="button" data-ng-click="resetTableau()">Reset</button>
+</form>
+
+<div class="alert alert-success text-center" ng-class="{hidden : !removed}"> {{removed}}</div>
+
 <script src="../js/gestionController.js"></script>
 </body>
 </html>

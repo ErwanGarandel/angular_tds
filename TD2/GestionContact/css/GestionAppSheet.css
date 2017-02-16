@@ -1,15 +1,19 @@
-table{
-    display: inherit;
-    float:inherit;
-    border:1px solid blue;
-    margin:0px;
-    padding:3px;
-}
-div{
+h2{
     text-align: center;
-    display:inline;
-    float: inherit;
-    border:1px solid red;
-    margin:0px;
-    padding:3px;
+}
+
+table{
+    text-align : center;
+}
+
+.filter {
+    height: auto;
+}
+
+.filter[placeholder]{
+    font-size: 30px;
+}
+.compter{
+    text-align: center;
+    color: #246;
 }
