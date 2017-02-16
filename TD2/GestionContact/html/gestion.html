@@ -9,9 +9,25 @@
 </head>
 <body data-ng-controller="gestionController as GestCtrl">
 
+<h2>Contact</h2>
+<table>
+    <tr>
+        <td>
+        <div class="affichageNom" ng-repeat="identite in tableauNom">
+                {{identite.name}}
+                {{identite.surname}}
+                 {{identite.mail}}
+                <button id="update" value="modifier">Modifier</button>
+                <button id="delete" value="supprimer">Supprimer</button>
+        <br />
+        </div>
+        </td>
+    </tr>
+</table>
 
-
-<ng-pluralize count="GestCtrl..length"
+<br />
+<br />
+<ng-pluralize count="tableauNom.length"
               when="{0:'Aucun contact trouvé', 1:'1 contact trouvé', 'other':'{} contacts trouvés'}">
 </ng-pluralize>
 <script src="../js/gestionController.js"></script>

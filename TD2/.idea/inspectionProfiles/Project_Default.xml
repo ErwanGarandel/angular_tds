@@ -4,7 +4,7 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="8">
+          <list size="9">
             <item index="0" class="java.lang.String" itemvalue="listecontroller" />
             <item index="1" class="java.lang.String" itemvalue="listc" />
             <item index="2" class="java.lang.String" itemvalue="ng-options" />
@@ -13,6 +13,7 @@
             <item index="5" class="java.lang.String" itemvalue="ng-dblclick" />
             <item index="6" class="java.lang.String" itemvalue="panel-primary" />
             <item index="7" class="java.lang.String" itemvalue="panel" />
+            <item index="8" class="java.lang.String" itemvalue="ng-repeat" />
           </list>
         </value>
       </option>
@@ -21,7 +22,7 @@
     <inspection_tool class="HtmlUnknownTag" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="7">
+          <list size="9">
             <item index="0" class="java.lang.String" itemvalue="nobr" />
             <item index="1" class="java.lang.String" itemvalue="noembed" />
             <item index="2" class="java.lang.String" itemvalue="comment" />
@@ -29,6 +30,8 @@
             <item index="4" class="java.lang.String" itemvalue="embed" />
             <item index="5" class="java.lang.String" itemvalue="script" />
             <item index="6" class="java.lang.String" itemvalue="ng-pluralize" />
+            <item index="7" class="java.lang.String" itemvalue="div" />
+            <item index="8" class="java.lang.String" itemvalue="br" />
           </list>
         </value>
       </option>

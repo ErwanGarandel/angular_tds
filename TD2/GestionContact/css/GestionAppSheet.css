@@ -1,0 +1,15 @@
+table{
+    display: inherit;
+    float:inherit;
+    border:1px solid blue;
+    margin:0px;
+    padding:3px;
+}
+div{
+    text-align: center;
+    display:inline;
+    float: inherit;
+    border:1px solid red;
+    margin:0px;
+    padding:3px;
+}
