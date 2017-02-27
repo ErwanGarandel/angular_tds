@@ -9,20 +9,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-filter/0.5.15/angular-filter.min.js"></script>
 </head>
-<body data-ng-controller="gestionController as GestCtrl">
+<body data-ng-controller="gestionController as gestCtrl">
 
-<form ng-submit="updateUSer()">
+<form ng-submit="gestCtrl.updateUser()">
     <legend>Contact</legend>
     <input class="filter" placeholder="Filter..." type="text" ng-model="searchText">
-<table class="table table-bordered">
-    <tr class="affichageNom" ng-repeat="identite in tabContacts | orderBy: 'name' | filter: searchText">
+    <table class="table table-bordered">
+        <tr class="affichageNom" ng-repeat="identite in tabContacts | orderBy: 'name' | filter: searchText">
             <td>{{identite.name}} </td>
             <td>{{identite.surname}} </td>
             <td>{{identite.mail}} </td>
             <td> <button class="ui inverted blue icon button" id="update" ><i class="write square icon"></i></button> </td>
             <td> <button class="ui inverted red icon button" ng-click="removeContact()" id="delete" ><i class="remove icon"></i></button> </td>
 
-        <br /><br />
+            <br /><br />
     </tr>
 </table>
 <br /><br />
@@ -31,12 +31,45 @@
               count="tabContacts.length"
               when="{0:'Aucun contact trouvé', 1:'1 contact trouvé', 'other':'{} contacts trouvés'}">
 </ng-pluralize>
-
     <button type="button" data-ng-click="resetTableau()">Reset</button>
+    <button type="button" data-ng-click="formAjouter()">Ajouter</button>
+</form>
+<form name="newContact" novalidate>
+
+    <legend>Ajouter un contact</legend>
+    <label>Nom</label>
+    <input name="name" placeholder="Entrer un nom..." type="text" required ng-minlength="2" ng-maxlength="20" ng-model="user.name"/>
+    <div ng-message="newContact.name.$error" ng-message-include="erreurs.html" ng-if="newContact.$submitted">
+        <div ng-message="required">Votre nom est requis</div>
+    </div>
+
+    <label>Prénom</label>
+    <input name="surname" placeholder="prénom..." type="text" required ng-minlength="2" ng-maxlength="20" ng-model="user.surname"/>
+    <div ng-message="newContact.surname.$error" ng-message-include="erreurs.html" ng-if="newContact.$submitted">
+        <div ng-message="required">Votre prénom est requis</div>
+    </div>
+
+    <label>Email</label>
+    <input name="mail" placeholder="Adresse email..." type="email" required/>
+    <div ng-message="newContact.mail.$error" ng-message-include="erreurs.html" ng-if="newContact.$submitted" ng-model="user.mail">
+        <div ng-message="required">Votre mail est requis</div>
+    </div>
+
+    <input type="submit" value="Ajouter" ng-click="update(user)"/>
+
+    <button id="annuler" value="annuler">Annuler</button>
 </form>
 
 <div class="alert alert-success text-center" ng-class="{hidden : !removed}"> {{removed}}</div>
-
+<div class="alert alert-success text-center" ng-class="{hidden : !added}"> {{added}}</div>
+<!--
+<div class="modal-header"><h2>Confirmation</h2></div>
+<div class="modal-body">Voulez-vous supprimer cette élement ? </div>
+<div class="modal-footer">
+    <button class="btn btn-primary" ng-click="delete()">Confirmer</button>
+    <button class="btn" ng-click="cancel()">Annuler</button>
+</div>
+-->
 <script src="../js/gestionController.js"></script>
 </body>
 </html>

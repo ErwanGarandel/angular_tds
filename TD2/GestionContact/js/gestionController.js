@@ -6,7 +6,7 @@ gestion.controller("gestionController", function($scope){
     var self = this;
 
 
-    $scope.tabContacts=
+    $scope.tabContacts =
         [
             {
                 "name" : "ZUCKERBERG",
@@ -24,32 +24,58 @@ gestion.controller("gestionController", function($scope){
                 "mail" : "steeve@apple.com"
             }
         ];
+    $scope.contact;
+    $scope.operation = "";
+   /*
+   0 -> rien
+   1 -> edit
+   2 -> add
+    */
+   $scope.edit = 0;
 
-/*
-    .factory('ContactService', [function () {
-        var factory = {};
-
-        factory.getContacts = function () {
-            return tableauNom;
-        };
-
-        return factory;
-    }]);
-*/
     $scope.removeContact = function (item) {
         var index = $scope.tabContacts.indexOf(item);
         $scope.tabContacts.splice(index, 1);
         $scope.removed = 'Contact supprimé avec succès.';
     };
-/*
-    $scope.cancelRemove = function (item) {
-        var index = $scope.tabContacts.indexOf(item);
-        $scope.tabContacts.splice(index, 1);
-        $scope.cancel = 'Contact désupprimé avec succès.';
+
+    $scope.cancelRemove = function () {
+        angular.forEach(self.tabContacts, function(contact){
+            if(contact.deleted)
+                contact.deleted = false;
+        })
     };
-*/
+
     $scope.resetTableau = function() {
         location.reload();
     };
 
+    /*-------------------------------------*/
+/*
+    this.addContact = function () {
+        self.contact = null;
+        self.tmpContact = angular.copy(contact);
+        self.operation = "Contact ajouté avec succès.";
+    };
+
+    this.updateContact = function() {
+        angular.forEach(self.contacts, function (contact) {
+        self.edit=1;
+        self.operation = "Contact modifié avec succès.";
+        })
+    };
+
+    this.update = function(){
+        if(self.contact != null){
+            var index = self.contacts.indexOf(self.contact);
+            self.contacts[index] = self.tmpContact;
+            console.log(index);
+            self.edit = 0;
+        }else
+        {
+            self.contacts.push(self.tmpContact);
+        }
+    };
+
+    */
 });

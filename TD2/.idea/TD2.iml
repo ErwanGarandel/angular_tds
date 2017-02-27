@@ -16,5 +16,6 @@
     </orderEntry>
     <orderEntry type="module" module-name="TD1" />
     <orderEntry type="module" module-name="user-management" />
+    <orderEntry type="module" module-name="ReseauSoc" />
   </component>
 </module>
