@@ -2,22 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e1b6b6c-021e-4812-a2ad-d118a4ea57a9" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TD3/.idea/TD3.iml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TD3/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TD3/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/app/data/currencymap.json" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/html/convertisseur.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/js/currencyController.js" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../user-management/app/views/users/add.volt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../user-management/app/views/users/delete.volt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../user-management/app/views/users/form.volt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../user-management/app/views/users/index.volt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../user-management/app/views/users/message.volt" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../../../../user-management/app/views/users/update.volt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/TD2.iml" afterPath="$PROJECT_DIR$/.idea/TD2.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/html/convertisseur.html" afterPath="$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/html/convertisseur.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/js/currencyController.js" afterPath="$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/js/currencyController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../user-management/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../../../../user-management/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../user-management/app/controllers/IndexController.php" afterPath="$PROJECT_DIR$/../../../../user-management/app/controllers/IndexController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../../../../user-management/app/controllers/UsersController.php" afterPath="$PROJECT_DIR$/../../../../user-management/app/controllers/UsersController.php" />
@@ -58,8 +51,8 @@
       <file leaf-file-name="convertisseur.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/html/convertisseur.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="103" lean-forward="false" selection-start-line="6" selection-start-column="103" selection-end-line="6" selection-end-column="103" />
+            <state relative-caret-position="476">
+              <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -68,8 +61,8 @@
       <file leaf-file-name="currencyController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/js/currencyController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="392">
+              <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
               <folding>
                 <element signature="e#0#42#0" expanded="false" />
               </folding>
@@ -158,24 +151,12 @@
             <id />
           </State>
           <State>
-            <id>Code SmellPHP</id>
-          </State>
-          <State>
             <id>JavaScript</id>
-          </State>
-          <State>
-            <id>JavaScript validity issuesJavaScript</id>
-          </State>
-          <State>
-            <id>PHP</id>
-          </State>
-          <State>
-            <id>UndefinedPHP</id>
           </State>
         </expanded-state>
         <selected-state>
           <State>
-            <id>BadExpressionStatementJS</id>
+            <id>JavaScript</id>
           </State>
         </selected-state>
       </profile-state>
@@ -424,12 +405,12 @@
       <workItem from="1488020103044" duration="15283000" />
       <workItem from="1488103141315" duration="11107000" />
       <workItem from="1488218202853" duration="10698000" />
-      <workItem from="1488283472831" duration="6544000" />
+      <workItem from="1488283472831" duration="9597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111780000" />
+    <option name="totallyTimeSpent" value="114833000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -444,7 +425,7 @@
     <frame x="-8" y="32" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14267352" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.0" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32974428" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.11444142" sideWeight="0.5079576" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -809,8 +790,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/js/currencyController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state relative-caret-position="392">
+          <caret line="28" column="34" lean-forward="false" selection-start-line="28" selection-start-column="34" selection-end-line="28" selection-end-column="34" />
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
@@ -819,8 +800,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/../TD3/ConvertisseurDeDevises/html/convertisseur.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="103" lean-forward="false" selection-start-line="6" selection-start-column="103" selection-end-line="6" selection-end-column="103" />
+        <state relative-caret-position="476">
+          <caret line="28" column="37" lean-forward="true" selection-start-line="28" selection-start-column="37" selection-end-line="28" selection-end-column="37" />
           <folding />
         </state>
       </provider>

@@ -1,7 +1,7 @@
 /**
  * Created by Erwan on 28/02/2017.
  */
-angular.module('currencyApp',[]).controller("currencyController",['$http', function($http){
+angular.module('currencyApp',[]).controller("currencyController",['$http', '$sce', function($http, $sce){
     var self = this;
     this.currencies;
     this.from = "EUR";
@@ -25,8 +25,17 @@ angular.module('currencyApp',[]).controller("currencyController",['$http', funct
         self.to = tmp;
     };
 
-    this.getResult = function(){
-
-    };
+     this.getResult = function(){
+             url = $sce.trustAsResourceUrl('https://free.currencyconverterapi.com/api/v3/convert?compact=y&q='+self.from+'_'+self.to);
+         $http.jsonp(url, {jsonCallbackParam : 'callback'}).then(function(result)
+         {
+            if(!jQuery.isEmptyObject(result.data)){
+                self.result = result.data[self.from+'_'+self.to].val*self.what;
+         }
+         else {
+                alert('Erreur survenue lors de la conversion');
+         }
+         });
+     };
 
 }]);

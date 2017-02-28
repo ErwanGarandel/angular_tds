@@ -5,6 +5,7 @@
     <title>Convertisseur</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 </head>
 <body data-ng-controller="currencyController as currCtrl">
 <div class="container">
@@ -20,10 +21,13 @@
                 <a href="#" data-ng-click="currCtrl.swap()">↔</a>
                 <select  data-ng-options="v.code as (v.code + ' - ' + v.name) for (k,v) in currCtrl.currencies" data-ng-model="currCtrl.to" class="form-control ng-pristine ng-valid ng-touched">
                 </select>
-                <input type="button" value="Convertir" class="btn btn-primary" size="5" data-ng-model="currCtrl.getResult()">
+                <input type="button" value="Convertir" class="btn btn-primary" size="5" data-ng-click="currCtrl.getResult()">
                 <input type="text" class="form-control" data-ng-model="currCtrl.result" size="5" readonly="readonly">
                 <input type="checkbox" data-ng-model="currCtrl.historique"/>Historique
             </form>
+        </div>
+        <div class="container-fluid" data-ng-show="currCtrl.historique">
+
         </div>
     </div>
 </div>
