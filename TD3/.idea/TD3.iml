@@ -14,9 +14,5 @@
         </SOURCES>
       </library>
     </orderEntry>
-    <orderEntry type="module" module-name="TD1" />
-    <orderEntry type="module" module-name="user-management" />
-    <orderEntry type="module" module-name="ReseauSoc" />
-    <orderEntry type="module" module-name="TD3" />
   </component>
 </module>

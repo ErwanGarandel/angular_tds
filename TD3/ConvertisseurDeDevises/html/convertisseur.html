@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="currencyApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Convertisseur</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+</head>
+<body data-ng-controller="currencyController as currCtrl">
+<div class="container">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            EX 3 : Currency Application
+        </div>
+        <div class="panel-body">
+            <form class="form-group form-inline">
+                <input class="form-control" type="number" size="5" placeholder="1" data-ng-model="currCtrl.what"/>
+                <select data-ng-options="v.code as (v.code + ' - ' + v.name) for (k,v) in currCtrl.currencies" data-ng-model="currCtrl.from" class="form-control ng-pristine ng-valid ng-touched">
+                </select>
+                <a href="#" data-ng-click="currCtrl.swap()">↔</a>
+                <select  data-ng-options="v.code as (v.code + ' - ' + v.name) for (k,v) in currCtrl.currencies" data-ng-model="currCtrl.to" class="form-control ng-pristine ng-valid ng-touched">
+                </select>
+                <input type="button" value="Convertir" class="btn btn-primary" size="5" data-ng-model="currCtrl.getResult()">
+                <input type="text" class="form-control" data-ng-model="currCtrl.result" size="5" readonly="readonly">
+                <input type="checkbox" data-ng-model="currCtrl.historique"/>Historique
+            </form>
+        </div>
+    </div>
+</div>
+<script src="../js/currencyController.js"></script>
+</body>
+</html>
