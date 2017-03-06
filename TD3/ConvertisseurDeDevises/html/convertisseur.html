@@ -6,6 +6,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
 </head>
 <body data-ng-controller="currencyController as currCtrl">
 <div class="container">
@@ -23,13 +24,37 @@
                 </select>
                 <input type="button" value="Convertir" class="btn btn-primary" size="5" data-ng-click="currCtrl.getResult()">
                 <input type="text" class="form-control" data-ng-model="currCtrl.result" size="5" readonly="readonly">
-                <input type="checkbox" data-ng-model="currCtrl.historique"/>Historique
+                <div class="checkbox"><label><input type="checkbox" data-ng-model="currCtrl.historique">&nbsp;Historique</label></div>
             </form>
         </div>
         <div class="container-fluid" data-ng-show="currCtrl.historique">
-
+            <div class="panel panel-default">
+                <div class="panel-body">
+                    <table class="table table-striped" id="lsthistorique" style="table-layout:fixed;width: 100%">
+                        <tbody>
+                        <tr>
+                            <th>De</th>
+                            <th>En</th>
+                            <th class="text-center">Tx</th>
+                            <th class="text-center">Montant</th>
+                            <th class="text-center">Date</th>
+                            <th class="text-center">Delta</th>
+                            <th></th>
+                        </tr>
+                        <tr data-ng-repeat="conversion in currCtrl.histo1">
+                            <td class="ng-binding">{{conversion.from}}</td>
+                            <td class="ng-binding">{{conversion.to}}</td>
+                            <td class="text-center ng-binding">{{conversion.rate}}</td>
+                            <td class="text-center ng-binding">{{conversion.amount()}}</td>
+                            <td class="text-center ng-binding">{{conversion.date | date:'medium'}}</td>
+                            <td class="text-center ng-binding">{{conversion.delta}}</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
         </div>
     </div>
+</div>
 </div>
 <script src="../js/currencyController.js"></script>
 </body>
