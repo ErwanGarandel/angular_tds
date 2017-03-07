@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../AvecBrowserify/.idea/AvecBrowserify.iml" filepath="$PROJECT_DIR$/../AvecBrowserify/.idea/AvecBrowserify.iml" />
       <module fileurl="file://$PROJECT_DIR$/../../../../ReseauSoc/.idea/ReseauSoc.iml" filepath="$PROJECT_DIR$/../../../../ReseauSoc/.idea/ReseauSoc.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SansBrowserify/.idea/SansBrowserify.iml" filepath="$PROJECT_DIR$/../SansBrowserify/.idea/SansBrowserify.iml" />
       <module fileurl="file://$PROJECT_DIR$/../TD1/.idea/TD1.iml" filepath="$PROJECT_DIR$/../TD1/.idea/TD1.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/TD2.iml" filepath="$PROJECT_DIR$/.idea/TD2.iml" />
       <module fileurl="file://$PROJECT_DIR$/../TD3/.idea/TD3.iml" filepath="$PROJECT_DIR$/../TD3/.idea/TD3.iml" />
