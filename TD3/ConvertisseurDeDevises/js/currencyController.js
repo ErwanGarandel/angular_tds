@@ -63,5 +63,18 @@ angular.module('currencyApp',[]).controller("currencyController",['$http', '$sce
                 alert('Erreur lors de la conversion');
         });
     };
+    this.updateHistorique = function (conversion) {
+        self.from=conversion.from;
+        self.to=conversion.to;
+        self.what=conversion.what;
+        conversion.update=true;
+        self.getResult();
+    };
+
+    this.deleteFromHistorique = function (conversion) {
+        var key=conversion.from+conversion.to;
+        delete self.histo1[key];
+    }
+
 
 }]);

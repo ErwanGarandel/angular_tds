@@ -50,8 +50,8 @@
                             <td class="text-center ng-binding">{{conversion.delta}}</td>
                             <td>
                                 <img src="http://preloaders.net/preloaders/716/Equalizer.gif" data-ng-show="conversion.update" class="ng-hide" style="height:18px; length:65px">&nbsp;
-                                <button class="btn btn-info btn-xs" data-ng-click="updateHistorique(conversion)" title="Rafraîchir"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>&nbsp;
-                                <button class="btn btn-danger btn-xs" data-ng-click="deleteHistorique(conversion)" title="Supprimer"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+                                <button class="btn btn-info btn-xs" data-ng-click="currCtrl.updateHistorique(conversion)" title="Rafraîchir"><span class="glyphicon glyphicon-refresh" aria-hidden="true"></span></button>&nbsp;
+                                <button class="btn btn-danger btn-xs" data-ng-click="currCtrl.deleteFromHistorique(conversion)" title="Supprimer"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
                             </td>
                         </tr>
                         </tbody>
