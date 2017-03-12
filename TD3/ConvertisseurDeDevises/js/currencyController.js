@@ -10,6 +10,8 @@ angular.module('currencyApp',[]).controller("currencyController",['$http', '$sce
     this.result;
     this.historique = false;
     this.histo1 = {};
+    this.refreshTime = 3000;
+    this.isAutoRefresh = false;
 
     $http.get('../app/data/currencymap.json').then(successCallback, errorCallback);
 
@@ -74,7 +76,18 @@ angular.module('currencyApp',[]).controller("currencyController",['$http', '$sce
     this.deleteFromHistorique = function (conversion) {
         var key=conversion.from+conversion.to;
         delete self.histo1[key];
-    }
+    };
 
+    this.length = function(){
+        return Object.keys(self.histo1).length;
+    };
+
+    this.startRefresh = function(){
+        if(self.isAutoRefresh){
+            self.updating=$interval( function(){ self.refresh(); }, self.refreshTime);
+        } else {
+            $interval.cancel(self.updating);
+        }
+    };
 
 }]);

@@ -20,5 +20,8 @@
     <orderEntry type="module" module-name="TD3" />
     <orderEntry type="module" module-name="SansBrowserify" />
     <orderEntry type="module" module-name="AvecBrowserify" />
+    <orderEntry type="module" module-name="phalcon-tds-Erwan" />
+    <orderEntry type="module" module-name="miniRpg" />
+    <orderEntry type="module" module-name="sources-tuto-rpg-openclassrooms-Partie1" />
   </component>
 </module>
