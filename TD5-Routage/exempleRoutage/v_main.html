@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html ng-app="sampleApp">
-<head>
+</head>
     <meta charset="UTF-8">
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.10/angular-route.min.js"></script>
     <script type="text/javascript" src="app.js"></script>
     <script type="text/javascript" src="controllers.js"></script>
     <script type="text/javascript" src="routing.js"></script>
-
+    <base href="/angular/angular_tds/angular_tds/TD5-Routage/exempleRoutage/"/>
 </head>
 <body>
-<a href="#/route1">Route 1</a><br/>
-<a href="#/route2/Smith">Route 2</a><br/>
-<a href="#/route3">Route inexistante</a><br/>
+<a href="route1">Route 1</a><br/>
+<a href="route2/Smith?prenom=John">Route 2</a><br/>
+<a href="route3">Route inexistante</a><br/>
 <div ng-view></div>
 </body>
 </html>
