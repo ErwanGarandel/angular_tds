@@ -13,7 +13,7 @@ angular.module("sampleApp").config(['$routeProvider',
                 templateUrl: 'views/route2-template.html',
                 controller: 'RouteController',
                 controllerAs:'rtCtrl2'
-            })
-
-        ;
+            }).otherwise({
+    redirectTo: '/route1'
+})
     }]);
