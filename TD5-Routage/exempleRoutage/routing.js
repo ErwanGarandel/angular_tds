@@ -9,10 +9,10 @@ angular.module("sampleApp").config(['$routeProvider',
             controller: 'RouteController',
             controllerAs:'rtCtrl1'
         })
-            .when('/route2', {
+            .when('/route2/:nom', {
                 templateUrl: 'views/route2-template.html',
                 controller: 'RouteController',
-                controllerAs:'rtCtrl1'
+                controllerAs:'rtCtrl2'
             })
 
         ;

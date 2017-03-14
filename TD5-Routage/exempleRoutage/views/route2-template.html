@@ -6,6 +6,10 @@
 </head>
 <body>
 <h1>Route2</h1>
-<div ng-bind="rtCtrl1.content2"></div>
+<!--
+<div ng-bind="rtCtrl2.content2"></div>
+-->
+<div>Bienvenue M. {{rtCtrl2.params.nom}}  {{rtCtrl2.params.prenom}}</div>
+<!-- passer en paramametres de l'url "?prenom=John" pour obtenir de prenom -->
 </body>
 </html>
